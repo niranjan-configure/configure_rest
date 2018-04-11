@@ -1,0 +1,36 @@
+
+
+  {{ board.name }} - {{ block.super }}
+
+
+  <li class="breadcrumb-item"><a href="home">Boards</a></li>
+  <li class="breadcrumb-item active">{{ board.name }}</li>
+
+
+
+  <div class="mb-4">
+    <a ng-href="board/{{topicId}}/new" >New topic</a>
+  </div>
+
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Topic</th>
+        <th>Starter</th>
+        <th>Replies</th>
+        <th>Views</th>
+        <th>Last Update</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        <tr>
+          <td>{{ topic.subject }}</td>
+          <td>{{ topic.starter.username }}</td>
+          <td>0</td>
+          <td>0</td>
+          <td>{{ topic.last_updated }}</td>
+        </tr>
+     
+    </tbody>
+  </table>

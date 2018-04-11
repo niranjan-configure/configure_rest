@@ -1,0 +1,14 @@
+<strong>Boards/Topic/New</strong>
+
+<form>
+	
+	<div class="form-group">
+	  <label for="id_subject">Subject</label>
+	  <input type="text" class="form-control" ng-model="newTopic.subject" id="id_subject" name="subject">
+	</div>
+	<div class="form-group">
+	  <label for="id_message">Message</label>
+	  <textarea class="form-control" id="id_message" name="message" ng-model="newTopic.message" rows="5"></textarea>
+	</div>
+	<button type="submit" class="btn btn-success" ng-click='onNewTopic()'>Post</button>
+</form>
