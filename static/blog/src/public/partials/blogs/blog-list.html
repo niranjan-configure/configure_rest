@@ -1,0 +1,25 @@
+
+<div>
+  <div class="row">
+    <br>
+    <div class="col push-m11 push-l11">
+  <span><a href="/post" class="waves-effect waves-light btn">New Post</a> </span>
+</div>
+  </div>
+  <div class="row">
+   <div ng-repeat="blog in blogs" class="col s12 m4 l3">
+     <div class="card medium">
+       <div class="card-image">
+         <img class="responsive-img" src="img/British-cat-1.jpg">
+       </div>
+       <div class="card-content">
+         <span class="card-title">{{blog.title}}</span>
+         <p><div marked="blog.message" ></div></p>
+       </div>
+       <div class="card-action">
+         <a href="/blog/{{blog.key}}">MORE...</a>
+       </div>
+     </div>
+   </div>
+ </div>
+ </div>

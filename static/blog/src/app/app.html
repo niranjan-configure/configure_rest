@@ -1,0 +1,22 @@
+<main>
+  <nav class="light-blue lighten-1" role="navigation" ng-if="loggedIn">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Blog</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <ng-view></ng-view>
+</main>
