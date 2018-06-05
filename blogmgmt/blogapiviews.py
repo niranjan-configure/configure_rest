@@ -1,5 +1,5 @@
 
-from rest_framework import serializers, generics, filters
+from rest_framework import serializers, generics, filters, viewsets
 from models import Comment, Post , Like
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
@@ -64,17 +64,19 @@ class PostWriteSerializer(serializers.ModelSerializer):
         validated_data['author'] = self.context['request'].user
         return serializers.ModelSerializer.create(self,validated_data)
 
-class BlogPostView(generics.ListCreateAPIView):
+class BlogPostView(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticatedOrReadOnly,)
+    lookup_field = 'key'
     def get_queryset(self):
         return Post.objects.all()
     def get_serializer_class(self):
-        if self.request.method == 'POST':
+        if self.request.method == 'POST' or self.request.method == 'PUT' or self.request.method == 'PATCH':
             return PostWriteSerializer
         return PostSerializer
 
-class BlogPostUpdateView(generics.RetrieveUpdateDestroyAPIView):
+'''
+    class BlogPostUpdateView(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticatedOrReadOnly,)
     lookup_field = 'key'
@@ -84,14 +86,16 @@ class BlogPostUpdateView(generics.RetrieveUpdateDestroyAPIView):
         if self.request.method == 'PUT' or self.request.method == 'PATCH':
             return PostWriteSerializer
         return PostSerializer
+'''
 
-class CommentView(generics.ListCreateAPIView):
+class CommentView(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticatedOrReadOnly,)
+    lookup_field = 'key'
     def get_queryset(self):
         return Comment.objects.all()
     def get_serializer_class(self):
-        if self.request.method == 'POST':
+        if self.request.method == 'POST' or self.request.method == 'PUT' or self.request.method == 'PATCH':
             return CommentWriteSerializer
         return CommentSerializer
 

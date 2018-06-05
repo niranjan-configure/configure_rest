@@ -4,14 +4,19 @@ import imageuploadapiviews
 import imageapiviews
 import signupapiviews
 from rest_framework.authtoken import views
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [ url(r'^api/blogs/(?P<key>[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})/$',
-                    blogapiviews.BlogPostUpdateView.as_view()),
-                url(r'^api/blogs/$',blogapiviews.BlogPostView.as_view()),
-                url(r'^api/comments/$',blogapiviews.CommentView.as_view()),
+router = DefaultRouter()
+router.register(r'^api/blogs', blogapiviews.BlogPostView, base_name="blog" )
+router.register(r'^api/comments', blogapiviews.CommentView, base_name="comment" )
+router.register(r'^api/images', imageapiviews.ImageListView, base_name="image" )
+
+# URL Patterns not using ViewSet
+rem_patterns = [
                 url(r'^api/imageUpload/$', imageuploadapiviews.FileUploadView.as_view()),
-                url(r'^api/images/$', imageapiviews.ImageListView.as_view()),
                 url(r'^api/likes/$', blogapiviews.LikeView.as_view()),
                 url(r'^api/signup/$', signupapiviews.SignupView.as_view()),
                 url(r'^api/login/', views.obtain_auth_token),
                ]
+
+urlpatterns = router.urls + rem_patterns
