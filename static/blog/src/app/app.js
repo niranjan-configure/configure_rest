@@ -35,6 +35,7 @@ angular.module(MODULE_NAME, [require('angular-route'),
   require('angular-marked'),
   require('angular-materialize'),
   require('ng-quill'),
+  require('ngmap'),
   sw_module['ngSweetAlert2']])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl)

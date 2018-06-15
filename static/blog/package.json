@@ -27,6 +27,7 @@
     "angular-route": "^1.7.0",
     "materialize-css": "^1.0.0-rc.1",
     "ng-quill": "^3.7.1",
+    "ngmap": "^1.18.4",
     "sweetalert2": "^7.21.1"
   },
   "devDependencies": {

@@ -25,10 +25,14 @@ angular.module('app').config(
     .when('/signup', {
       templateUrl: 'partials/login/signup.html',
       controller: 'SignupController'
-    })
+    }).when('/maps', {
+        templateUrl: 'partials/map/map.html',
+        controller: 'MapController'
+      })
     $locationProvider.html5Mode(true);
   }
 )
 require('../components/blog')
 require('../components/image')
 require('../components/login')
+require('../components/map')
