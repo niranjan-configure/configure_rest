@@ -1,0 +1,58 @@
+<div class="row">
+   <div class="col s12 m9 l8 offset-m1 offset-l2">
+      <div class="card-panel">
+         <div class="card-title">
+            <h3>{{image.name}}</h3>
+            <br>
+            <span><h6 style="display:inline-block;margin-right:10px;">Jane Williams {{image.posted_on | date: medium}}</h6>
+              <a href="#" ng-click="addLike()" style="display:inline-block;float:right;margin-right:10px;"> <i class="material-icons circle">thumb_up</i>Likes ({{blog.likes.length}})</a>
+              <a href="#" style="display:inline-block;float:right;margin-right:10px;"> <i class="material-icons circle">comment</i>Comments ({{image.comments.length}})</a>
+            </span>
+         </div>
+         <center>
+         <div class="card-image">
+           <img class="responsive-img" src="img/British-cat-1.jpg">
+         </div>
+          </center>
+         <div class="card-content">
+           <p>{{image.description}}</p>
+         </div>
+
+         <ul class="collection with-header">
+            <li class="collection-header">
+               <span>
+               <h5 style="display:inline-block;margin-right:10px;">Comments ({{image.comments.length}})</h5>
+               <a style="display:inline-block;float:right;margin-right:10px;"class="waves-effect waves-light btn" ng-click="addComment = true">Add</a>
+            </li>
+            <li ng-repeat="comment in image.comments" class="collection-item avatar">
+               <i class="material-icons circle">person</i>
+               <span class="title">Adam Smith</span>
+               <p>{{comment.commented_on | date:'medium'}}<br>
+               <div marked="comment.comment_text"> </div>
+               </p>
+            </li>
+            <li class="collection-item" ng-if="addComment">
+               <div class="row">
+                  <div class="col">
+                     <h4>
+                     Your Comment</he>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col">
+                     <ng-quill-editor
+                        ng-model="comment.comment_text">
+                     </ng-quill-editor>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col">
+                     <a class="waves-effect waves-light btn" ng-click="saveComment()">save</a>
+                  </div>
+               </div>
+            </li>
+         </ul>
+         <a class="waves-effect waves-light btn">Load More</a>
+      </div>
+   </div>
+</div>

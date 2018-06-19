@@ -28,6 +28,9 @@ angular.module('app').config(
     }).when('/maps', {
         templateUrl: 'partials/map/map.html',
         controller: 'MapController'
+      }).when('/images/:key', {
+        templateUrl: 'partials/images/image-page.html',
+        controller: 'ImagePageController'
       })
     $locationProvider.html5Mode(true);
   }

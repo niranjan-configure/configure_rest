@@ -27,9 +27,23 @@ class Image(models.Model):
     description = models.CharField(max_length=500)
     name = models.CharField(max_length=100)
     owner = models.ForeignKey(User, default="", null=True,blank=True)
+    uploaded_on = models.DateTimeField(default=timezone.now)
 
 class Like(models.Model):
     key = models.CharField(max_length=32,default=uuid.uuid4, editable=False)
     liked_on = models.DateTimeField(default=timezone.now)
     post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='likes')
+    user = models.ForeignKey(User, default="", null=True,blank=True)
+
+class ImageComment(models.Model):
+    key = models.CharField(max_length=32,default=uuid.uuid4, editable=False)
+    comment_text = models.TextField(max_length=4000)
+    commented_on = models.DateTimeField(default=timezone.now)
+    image = models.ForeignKey(Image,on_delete=models.CASCADE,related_name='comments')
+    author = models.ForeignKey(User, default="", null=True,blank=True)
+
+class ImageLike(models.Model):
+    key = models.CharField(max_length=32,default=uuid.uuid4, editable=False)
+    liked_on = models.DateTimeField(default=timezone.now)
+    image = models.ForeignKey(Image,on_delete=models.CASCADE,related_name='likes')
     user = models.ForeignKey(User, default="", null=True,blank=True)

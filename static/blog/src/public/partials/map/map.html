@@ -1,0 +1,40 @@
+<div>
+  <div class="row">
+    <div class="col l3 m3 s12">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Departments</h4></li>
+        <li class="collection-item" ng-repeat="dept in markers"><div>{{dept.department_name}} <a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      </ul>
+
+    </div>
+    <div class="row">
+    <div class="col l9 m9 s12">
+      <ng-map center="{{map_center}}" style="height:90vh;">
+        <custom-marker ng-repeat= "marker in markers" position="{{marker.position}}" >
+            <div class="deptmarker"
+                ng-class="{red : checkRed(marker),orange : checkOrange(marker), green : checkGreen(marker) }">
+              <div>
+              <center><i class="material-icons">person_pin</i></center>
+              <center>{{marker.department_name}}</center>
+              <table>
+                <thead>
+                  <tr>
+                  <th>Present</th>
+                  <th>Absent</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><center>{{marker.present}}</center></td>
+                    <td><center>{{marker.absent}}</center></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </custom-marker>
+      </ng-map>
+    </div>
+  </div>
+  </div>
+ </div>

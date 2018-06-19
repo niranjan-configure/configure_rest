@@ -24,11 +24,19 @@ var imageServiceFactory = function ($http) {
             headers: {'Content-Type': undefined}
         })
   }
+  var addComment = function (comment) {
+    return $http.post('/blogmgmt/api/imagecomments/', comment)
+  }
+  var addLike = function (image_key) {
+    return $http.post('/blogmgmt/api/imagelikes/', {'post': image_key})
+  }
   return {
     getImages: getImages,
     getImage: getImage,
     createImage: createImage,
-    uploadImage: uploadImage
+    uploadImage: uploadImage,
+    addComment: addComment,
+    addLike: addLike
   }
 }
 
