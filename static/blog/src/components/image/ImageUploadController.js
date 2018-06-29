@@ -28,5 +28,5 @@ var imageUploadController = function($scope, imageService, $location) {
   }
 
 }
-angular.module('app').
+angular.module('blogapp').
   controller('ImageUploadController', ['$scope','ImageService', '$location',imageUploadController])

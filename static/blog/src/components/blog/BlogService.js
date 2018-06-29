@@ -25,5 +25,5 @@ var blogServiceFactory = function ($http) {
   }
 }
 
-angular.module('app').
+angular.module('blogapp').
   factory('BlogService',['$http', blogServiceFactory])

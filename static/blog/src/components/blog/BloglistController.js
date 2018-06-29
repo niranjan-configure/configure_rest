@@ -36,5 +36,5 @@ var blogController = function ($scope, blogService) {
 
 
 }
-angular.module('app').
+angular.module('blogapp').
   controller('BloglistController', ['$scope','BlogService', blogController])

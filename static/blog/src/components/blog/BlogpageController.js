@@ -39,5 +39,5 @@ var blogPageController = function($scope, $routeParams, blogService ) {
   $scope.loadBlog()
 
 }
-angular.module('app').
+angular.module('blogapp').
   controller('BlogPageController', ['$scope', '$routeParams','BlogService', blogPageController])

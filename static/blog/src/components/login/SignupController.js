@@ -20,5 +20,5 @@ var signUpController = function ($scope, loginService, swal, $location) {
     })
   }
 }
-angular.module('app').
+angular.module('blogapp').
   controller('SignupController', ['$scope','LoginService', 'swal', '$location', signUpController])

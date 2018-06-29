@@ -22,5 +22,5 @@ var loginServiceFactory = function ($http, $window) {
   }
 }
 
-angular.module('app').
+angular.module('blogapp').
   factory('LoginService',['$http','$window', loginServiceFactory])

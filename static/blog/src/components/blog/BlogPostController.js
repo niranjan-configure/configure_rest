@@ -18,5 +18,5 @@ var blogPostController = function($scope, blogService, loginService, $location) 
   // Initialize
   init()
 }
-angular.module('app').
+angular.module('blogapp').
   controller('BlogPostController', ['$scope','BlogService','LoginService', '$location',blogPostController])

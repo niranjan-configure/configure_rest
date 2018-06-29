@@ -39,5 +39,5 @@ var imagePageController = function($scope, $routeParams, imageService ) {
   $scope.loadImage()
 
 }
-angular.module('app').
+angular.module('blogapp').
   controller('ImagePageController', ['$scope', '$routeParams','ImageService', imagePageController])

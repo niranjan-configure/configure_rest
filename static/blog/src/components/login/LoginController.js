@@ -25,5 +25,5 @@ var loginController = function ($scope, loginService, $location, $window, $route
 
 
 }
-angular.module('app').
+angular.module('blogapp').
   controller('LoginController', ['$scope','LoginService', '$location','$window', '$routeParams' , loginController])

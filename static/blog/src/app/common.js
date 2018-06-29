@@ -1,5 +1,5 @@
 var angular = require('angular')
-var currentApp = angular.module('app')
+var currentApp = angular.module('blogapp')
 currentApp.factory('authInterceptor', function ($rootScope, $q, $window,swal,$location) {
   return {
     request: function (config) {

@@ -40,5 +40,5 @@ var imageServiceFactory = function ($http) {
   }
 }
 
-angular.module('app').
+angular.module('blogapp').
   factory('ImageService',['$http', imageServiceFactory])

@@ -9,7 +9,7 @@ let app = () => {
   return {
     template: require('./app.html'),
     controller: 'AppCtrl',
-    controllerAs: 'app'
+    controllerAs: 'blogapp'
   }
 }
 
@@ -29,7 +29,7 @@ class AppCtrl {
   }
 }
 
-const MODULE_NAME = 'app'
+const MODULE_NAME = 'blogapp'
 const sw_module = require('angular-h-sweetalert')
 angular.module(MODULE_NAME, [require('angular-route'),
   require('angular-marked'),

@@ -36,5 +36,5 @@ var imageController = function ($scope, imageService) {
 
 
 }
-angular.module('app').
+angular.module('blogapp').
   controller('ImagelistController', ['$scope','ImageService', imageController])

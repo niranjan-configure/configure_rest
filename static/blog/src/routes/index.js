@@ -1,7 +1,7 @@
 import angular from 'angular'
 
 
-angular.module('app').config(
+angular.module('blogapp').config(
   function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl: 'partials/blogs/blog-list.html',
